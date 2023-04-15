@@ -1,5 +1,11 @@
-class ValidadorCpf {
-  static bool validarCpf(String cpf) {
+import 'package:avaliacao_psa/service/pessoa_interface.dart';
+
+class Pessoa implements InterfacePessoa {
+  late String nome;
+  late String cpf;
+
+  @override
+  bool validarCpf(String cpf) {
     if (!cpf.contains('.')) return false;
     if (!cpf.contains('-')) return false;
     if (cpf.length != 14) return false;
